@@ -1,0 +1,42 @@
+<div class="battle-info-container">
+  <div class="battle-time">
+    <p>86 Seconds Left {{ data.timeLeft }}</p>
+  </div>
+  <div class="participants">
+    <div class="participant">
+
+      <img [src]="data.user1.profilePicture" alt="{{ data.user1.name }}" class="user-avatar">
+      <p class="username">{{ data.user1.name }}</p>
+      <div class="bottom-sheet-header">
+
+        <div class="user-stats">
+          <div class="stat-item">
+            <mat-icon style="color:rgb(230, 170, 8)" mat-list-icon>star</mat-icon>
+            <div class="stat-value">{{ data.user1.stats.points }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="vs">
+      <span>VS</span>
+    </div>
+    <div class="participant">
+      <img [src]="data.user2.profilePicture" alt="{{ data.user2.name }}" class="user-avatar">
+      <p class="username">{{ data.user2.name }}</p>
+      <div class="bottom-sheet-header">
+
+        <div class="user-stats">
+          <div class="stat-item">
+            <mat-icon style="color:rgb(230, 170, 8)" mat-list-icon>star</mat-icon>
+            <div class="stat-value">{{ data.user1.stats.points }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button mat-raised-button color="primary" (click)="watchBattle()">Watch</button>
+    <button mat-button (click)="closeSheet()">Close</button>
+  </div>
+</div>

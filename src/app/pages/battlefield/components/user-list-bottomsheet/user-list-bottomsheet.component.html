@@ -1,0 +1,47 @@
+<div class="bottom-sheet-content">
+  <!-- Request Battle Button -->
+  <button mat-raised-button color="primary" (click)="openDialog('800ms', '500ms')" class="battle-request-btn">Request Battle</button>
+
+  <!-- Header Section -->
+  <div class="bottom-sheet-header">
+    <div class="user-info">
+      <img [src]="data.profilePicture" alt="{{ data.name }}" class="user-avatar2">
+      <h2>{{ data.name }}</h2>
+    </div>
+    <div class="user-stats">
+      <div class="stat-item">
+        <mat-icon mat-list-icon>star</mat-icon>
+        <div class="stat-value">{{ data.stats.points }}</div>
+        <div class="stat-label">Points</div>
+      </div>
+      <div class="stat-item">
+        <mat-icon mat-list-icon>thumb_up</mat-icon>
+        <div class="stat-value">{{ data.stats.votes }}</div>
+        <div class="stat-label">Votes</div>
+      </div>
+      <div class="stat-item">
+        <mat-icon mat-list-icon>emoji_events</mat-icon>
+        <div class="stat-value">{{ data.stats.battles }}</div>
+        <div class="stat-label">Battles</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chat Window -->
+  <div class="user-chat2">
+    <div class="chat-window2" #chatWindow>
+      <div *ngFor="let message of messages" class="chat-message2">
+        <strong>{{ message.user }}</strong>: {{ message.text }}
+      </div>
+    </div>
+    <div class="chat-input2">
+      <mat-form-field appearance="outline" class="chat-form2">
+        <mat-label>Type a message...</mat-label>
+        <input matInput [(ngModel)]="newMessage" (keyup.enter)="sendMessage()" placeholder="Type a message..." />
+        <button mat-icon-button matSuffix (click)="sendMessage()">
+          <mat-icon>send</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+  </div>
+</div>

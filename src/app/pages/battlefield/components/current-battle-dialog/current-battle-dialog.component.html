@@ -1,0 +1,33 @@
+<div class="battle-dialog">
+  <div class="battle-container">
+    <div class="user">
+      <p class="username">{{ data.user1.name }}</p>
+      <div class="webcam">
+        <img [src]="data.user1.profilePicture" alt="{{ data.user1.name }}">
+      </div>
+      <div class="actions">
+        <button color="primary" mat-fab (click)="closeDialog()"><mat-icon>thumb_up</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div class="timer">
+      <p>{{ timeLeft }}</p>
+      <span class="seconds-text">seconds</span>
+    </div>
+    <div class="user">
+      <p class="username">{{ data.user2.name }}</p>
+      <div class="webcam">
+        <img [src]="data.user2.profilePicture" alt="{{ data.user2.name }}">
+      </div>
+      <div class="actions">
+        <button mat-stroked-button (click)="closeDialog()">Vote</button>
+      </div>
+    </div>
+  </div>
+  <div class="actions">
+    <button mat-button (click)="closeDialog()">Close</button>
+  </div>
+</div>
+
+
+

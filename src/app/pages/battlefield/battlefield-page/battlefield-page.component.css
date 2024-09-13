@@ -1,0 +1,420 @@
+html, body {
+  overflow-x: hidden;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.battlefield {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+  flex-direction: row; /* Align children in a row for desktop */
+}
+
+.user-list, .current-battles-container {
+  overflow-y: auto;
+  background: #f4f4f4;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  border-radius: 4px;
+  flex: 0 0 25%; /* 25% width for user list and current battles */
+  height: 100%; /* Full height of viewport */
+}
+
+.user-list::-webkit-scrollbar, .current-battles-container::-webkit-scrollbar {
+  display: none;
+}
+
+.user-list {
+  padding: 10px;
+}
+
+.user-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  gap: 8px;
+}
+
+.user-item {
+  display: flex;
+  justify-content: center;
+}
+
+.user-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-avatar {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.user-name {
+  margin-top: 4px;
+  font-size: 11px;
+  color: #333;
+  text-align: center;
+}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  overflow: hidden;
+  box-sizing: border-box;
+  flex: 1; /* Fill remaining width */
+  color: black;
+}
+
+/* Chat Window Styles */
+.chat-window {
+  flex: 1; /* Take available space */
+  overflow-y: auto;
+  background: linear-gradient(5deg, rgba(243, 169, 120, 0.144),rgba(8, 8, 8, 0.24)); /* Subtle gradient for background */
+  padding: 20px;
+  color: white; /* Ensure text is white for readability */
+}
+
+.chat-window::-webkit-scrollbar {
+  display: none;
+}
+
+.chat-message {
+  background: rgba(0, 0, 0, 0.5); /* Increased transparency, dark background */
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  color: white; /* Ensure text is white for readability */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.chat-message strong {
+  color: #ffffff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Add shadow for better readability */
+}
+.chat-input {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  width: 100%;
+  color:black;
+  /* height: 30px; */
+}
+
+.chat-form {
+  width: 100%;
+  margin-bottom: -20px;
+  color: black;
+}
+
+.current-battles-container {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  overflow-y: auto;
+  background-color: white;
+}
+
+.current-battles-container h3 {
+  font-size: 18px;
+  margin-top: 0;
+}
+
+.battle {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  justify-content: space-evenly;
+  border-radius: 20px;
+  padding: 8px;
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-basis: 45%;
+}
+
+.battle .user-avatar {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 8px;
+}
+
+.vs {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  padding: 10px;
+  border-radius: 25px;
+}
+
+@media (max-width: 768px) {
+  .battlefield {
+    flex-direction: column;
+  }
+
+  .user-list {
+    padding: 10px;
+    flex: 0 0 auto;
+    height: 25%; /* Adjust based on your preference */
+  }
+
+  .chat {
+    flex: 1 1 auto;
+    height: auto;
+  }
+
+  .current-battles-container {
+    flex: 0 0 auto;
+    height: 25%; /* Adjust based on your preference */
+    padding: 0px;
+  }
+}
+
+@media (min-width: 769px) {
+  .battlefield {
+    flex-direction: row;
+  }
+
+  .user-list, .current-battles-container {
+    flex: 0 0 25%;
+    height: 100vh;
+  }
+
+  .chat {
+    flex: 1 1 50%; /* Central chat area should take up the available space */
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .chat-window {
+    flex: 1; /* Take all available space */
+    overflow-y: auto;
+  }
+
+  .chat-input {
+    flex: 0; /* Ensure it stays at the bottom */
+  }
+}
+
+.battle {
+  cursor: pointer; /* Change cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth transition for hover */
+margin-left: 1px;
+margin-right: 5px;
+}
+
+.battle:hover {
+  background-color: #f0f0f0; /* Change background on hover */
+}
+
+.battle:active {
+  background-color: #e0e0e0; /* Change background on click */
+}
+
+.battle-user-name {
+  font-weight: 600;
+  white-space: nowrap; /* Prevents text from wrapping to the next line */
+  overflow: hidden; /* Ensures the content fits inside the container */
+  text-overflow: ellipsis; /* Displays ellipsis if the text overflows */
+  color: black;
+  max-width: 60px; /* Adjust this based on your specific layout */
+
+}
+
+.vs {
+  transition: box-shadow 0.3s ease-in-out; /* Smooth transition */
+  color: black;
+}
+
+.mat-elevation-z0 {
+  box-shadow: none; /* Ensure no shadow */
+}
+
+.mat-elevation-z8 {
+  box-shadow: 0px 5px 5px -3px rgba(255, 152, 0, 0.2),
+              0px 8px 20px 1px rgba(168, 105, 11, 0.315),
+              0px 13px 14px 2px rgba(78, 47, 1, 0.12); /* Orange highlight shadow */
+}
+.user-item:hover .user-name,
+.battle:hover .battle-user-name {
+  color: #e28d0d; /* Change color on hover for consistency */
+  font-weight: 600;
+}
+
+.user-item {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0px;
+}
+
+.outer-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  padding: 8px;
+  transition: background-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.inner-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  padding: 3px;
+  transition: background-color 0.1s ease;
+  box-sizing: border-box;
+}
+
+.user-item:hover .outer-wrapper {
+  background-color: rgba(255, 152, 0, 0.3); /* Lighter background color for hover */
+}
+
+.user-item:hover .inner-wrapper {
+  background-color: rgba(255, 152, 0, 0.5); /* Darker background color for hover */
+}
+
+.inner-wrapper:active {
+  background-color: rgba(255, 87, 34, 0.7); /* Even more vibrant color for click */
+}
+
+.user-avatar {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.user-name {
+  margin-top: -1px;
+  font-size: 11px;
+  color: #333;
+  font-weight: 600;
+
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 60px;
+}
+
+.user-item:hover .user-name {
+  color: #e28d0d;
+  font-weight: 600;
+}
+
+.user-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  gap: 8px;
+}
+
+
+@media (max-width: 768px) {
+  .user-name {
+    margin-top: -13px;
+    font-size: 11px;
+    color: #333;
+    text-align: center;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .battle .user-avatar {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0px;
+  }
+
+  .battle {
+    margin-bottom: 0px;
+  }
+
+
+  .chat-window {
+    background: linear-gradient(5deg, rgba(243, 169, 120, 0.144),rgba(8, 8, 8, 0.24));
+    padding: 10px;
+    border-radius: 8px;
+    flex: 1;
+    overflow-y: auto;
+  }
+
+  .chat-message {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 8px;
+    border-radius: 6px;
+    margin-bottom: 5px;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 0.9em;
+  }
+
+  .chat-message strong {
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  }
+
+  .chat-input {
+  }
+
+  .chat-input mat-form-field {
+
+  }
+
+  .chat-input input {
+    font-size: 0.9em;
+  }
+
+  .chat-input button {
+    margin-left: 5px;
+  }
+
+  .bottom-sheet-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .user-info {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+  }
+
+  .user-stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 10px 0;
+  }
+
+  .stat-item {
+    flex-basis: calc(33.33% - 10px);
+    margin-bottom: 10px;
+  }
+
+  /* Button in a static position */
+  .battle-request-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+}

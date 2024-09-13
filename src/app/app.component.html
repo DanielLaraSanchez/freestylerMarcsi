@@ -1,0 +1,22 @@
+<mat-sidenav-container class="sidenav-container" *ngIf="showSidenav">
+  <mat-sidenav #drawer class="sidenav"
+               [mode]="isHandset ? 'over' : 'side'"
+               [opened]="!isHandset">
+    <mat-nav-list class="nav-list">
+      <a mat-list-item routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+      <a mat-list-item routerLink="/signup" routerLinkActive="active">Signup</a>
+      <a mat-list-item routerLink="/battle" routerLinkActive="active">Battle</a>
+      <a mat-list-item routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+      <a mat-list-item routerLink="/login" routerLinkActive="active">Login</a>
+      <a mat-list-item routerLink="/battles" routerLinkActive="active">Battles</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <button mat-icon-button (click)="drawer.toggle()" class="menu-button" *ngIf="isHandset">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<router-outlet *ngIf="!showSidenav"></router-outlet>

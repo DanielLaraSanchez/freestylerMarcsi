@@ -1,0 +1,242 @@
+.bottom-sheet-content {
+  padding: 16px;
+  text-align: center;
+  color: white;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative; /* Ensure container is the containing block for absolute positioning */
+}
+
+.battle-request-btn {
+  top: 0px;
+  margin-right: -355px;
+}
+
+.mat-bottom-sheet-container {
+  /* height: 100%; */
+  overflow: hidden;
+}
+
+/* Make bottom sheet occupy the full height on mobile */
+@media (max-width: 600px) {
+  .mat-bottom-sheet-container {
+    height: 100%;
+  }
+
+  .battle-request-btn {
+    top: 0px;
+    margin-right: -225px;
+    width: 142px;
+  }
+
+  .bottom-sheet-content {
+    height: 100%;
+    padding: 20px 10px; /* Adjust padding as needed */
+  }
+
+  .user-info {
+    margin-bottom: 20px; /* Space between user info and stats */
+  }
+
+  .user-stats {
+    flex-direction: row;
+    align-items: start; /* Align items to the left */
+    margin-bottom: 20px; /* Add space between stats and the chat input */
+  }
+
+  .stat-item {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .stat-value {
+    font-size: 1.2em;
+  }
+
+  .stat-label {
+    font-size: 0.7em;
+  }
+
+  /* .user-chat2 {
+    height: calc(100% - 250px);
+  } */
+}
+
+.user-stats {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  flex-direction: row;
+}
+
+.bottom-sheet-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.user-avatar2 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid white;
+  margin-bottom: 10px;
+}
+
+h2 {
+  margin: 10px 0;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+}
+
+.stat-value {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.stat-label {
+  font-size: 0.8em;
+  color: #b0b0b0;
+}
+
+.user-chat2 {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: -25px;
+  height: 300px;
+
+}
+
+.chat-window2 {
+  /* background-color:white; */
+
+  flex-grow: 1;
+  overflow: hidden;
+  background: linear-gradient(5deg, rgba(243, 169, 120, 0.144),rgba(8, 8, 8, 0.486)); /* Subtle gradient for background */
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  height: 300px;
+  z-index:auto;
+}
+
+.chat-message2 {
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.chat-input2 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.mat-form-field {
+  flex-grow: 1;
+  margin: 0;
+}
+
+.chat-form2 {
+  width: 100%;
+}
+
+.user-actions {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 20px;
+  padding: 0 5%;
+}
+
+button {
+  margin: 0 10px;
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 600px) {
+  .bottom-sheet-content {
+    padding: 8px;
+  }
+
+  .user-chat2 {
+    height: 250px;
+  }
+
+  .chat-window2 {
+    height: 150px;
+  }
+
+  .bottom-sheet-header {
+    margin-bottom: -20px;
+    margin-top: -36px;
+  }
+
+  .user-stats {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .user-avatar2 {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 5px;
+  }
+
+  h2 {
+    font-size: 1.2em;
+    margin: 5px 0;
+  }
+
+  .stat-item {
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 15px; /* Improved spacing between stat items */
+  }
+
+  .stat-value {
+    font-size: 1.2em;
+  }
+
+  .stat-label {
+    font-size: 0.7em;
+  }
+
+  /* .user-chat2 {
+    height: 50%;
+  } */
+
+  .chat-input2 {
+    margin-top: 5px;
+  }
+
+  .user-actions {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px; /* Improved spacing between chat input and buttons */
+  }
+
+  button {
+    width: 90%;
+    margin: 5px 0;
+  }
+}

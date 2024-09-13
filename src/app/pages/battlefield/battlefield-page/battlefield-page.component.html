@@ -1,0 +1,85 @@
+<div class="battlefield">
+  <div class="user-list">
+    <div class="user-grid">
+      <div
+        class="user-item"
+        *ngFor="let user of onlineUsers"
+        (click)="openBottomSheetForUserList(user)"
+      >
+        <div class="outer-wrapper">
+          <div class="inner-wrapper" matRipple>
+            <img
+              class="user-avatar"
+              [src]="user.profilePicture"
+              [alt]="user.name"
+            />
+          </div>
+        </div>
+        <div class="user-name">{{ user.name }}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="chat">
+    <div class="chat-window" #chatWindow>
+      <div *ngFor="let message of messages">
+        <div class="chat-message">
+          <strong>{{ message.user }}</strong
+          >: {{ message.text }}
+        </div>
+      </div>
+    </div>
+
+    <div class="chat-input">
+      <mat-form-field
+        appearance="outline"
+        color="accent"
+        class="example-full-width chat-form"
+      >
+        <mat-label>Type a message...</mat-label>
+        <input
+          matInput
+          [(ngModel)]="newMessage"
+          (keyup.enter)="sendMessage()"
+          placeholder="Type a message..."
+        />
+        <button mat-icon-button matSuffix (click)="sendMessage()">
+          <mat-icon>send</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="current-battles-container">
+    <div
+      *ngFor="let pair of pairs"
+      class="battle"
+      (mouseenter)="onMouseEnter(pair)"
+      (mouseleave)="onMouseLeave()"
+      (click)="openBottomSheetForBattle(pair)"
+    >
+      <div class="user">
+        <img
+          [src]="pair.user1.profilePicture"
+          [alt]="pair.user1.name"
+          class="user-avatar"
+        />
+        <div class="battle-user-name">{{ pair.user1.name }}</div>
+      </div>
+      <div
+        class="vs"
+        [class.mat-elevation-z0]="true"
+        [class.mat-elevation-z8]="hoveredPair === pair"
+      >
+        VS
+      </div>
+      <div class="user">
+        <img
+          [src]="pair.user2.profilePicture"
+          [alt]="pair.user2.name"
+          class="user-avatar"
+        />
+        <div class="battle-user-name">{{ pair.user2.name }}</div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  padding: 0;
+}
+
+.app-container {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+:root {
+  --primary-color: #ff9800; /* Orange color */
+  --primary-color-dark: #e68900; /* Darker shade of orange for hover states */
+  --background-color: #333; /* Dark background */
+  --card-background-color: #424242; /* Slightly lighter dark color for contrast */
+  --text-color: #fff; /* White text color */
+  --error-color: #ff5252; /* Red color for errors */
+  --input-background-color: #2c2c2c; /* Dark background for inputs */
+  --input-border-color: #888; /* Border color for inputs */
+}
+

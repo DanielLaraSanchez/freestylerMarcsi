@@ -1,0 +1,62 @@
+/* General styling */
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.menu-button {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 3px; /* Add some spacing */
+  z-index: 2; /* Ensure it stays on top */
+  background: linear-gradient(5deg, rgba(170, 70, 4, 0.932),rgba(8, 8, 8, 0.808)); /* Subtle gradient for background */
+  border-radius: 50%; /* Circular background for aesthetic */
+}
+
+/* Sidenav styling */
+.sidenav-container {
+  height: 100vh; /* Full viewport height */
+}
+
+.sidenav {
+  width: 200px; /* Reduced width for the sidenav */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center items vertically */
+  align-items: center; /* Center items horizontally */
+}
+
+.nav-list {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center items vertically */
+  align-items: center; /* Center items horizontally */
+  height: 100%; /* Full height of the container */
+  padding: 0;
+  margin: 0;
+}
+
+.mat-list-item {
+  justify-content: center; /* Center text horizontally */
+  align-items: center; /* Center items vertically */
+  text-align: center;
+  width: 100%;
+}
+
+/* Responsive behavior: Adjustments for mobile */
+@media (max-width: 768px) {
+  .sidenav {
+    width: 150px; /* Wider sidenav for mobile */
+  }
+
+  .nav-list {
+    height: 100%; /* Maintain full height */
+  }
+}
+
+

@@ -1,0 +1,58 @@
+.battle-info-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+}
+
+.participants {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.participant {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vs {
+  margin: 0 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.user-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 5px;
+}
+
+.username {
+  font-size: 14px;
+}
+
+.battle-time {
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.user-stats {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
