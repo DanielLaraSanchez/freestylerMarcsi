@@ -1,41 +1,31 @@
 {
-  "name": "freestyler",
-  "version": "0.0.0",
+  "name": "p2pai_2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "engines": {
+    "node": "20.16.0"
+  },
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
-  "private": true,
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "@angular/animations": "^18.2.0",
-    "@angular/cdk": "^18.2.0",
-    "@angular/common": "^18.2.0",
-    "@angular/compiler": "^18.2.0",
-    "@angular/core": "^18.2.0",
-    "@angular/flex-layout": "^15.0.0-beta.42",
-    "@angular/forms": "^18.2.0",
-    "@angular/material": "^18.2.0",
-    "@angular/platform-browser": "^18.2.0",
-    "@angular/platform-browser-dynamic": "^18.2.0",
-    "@angular/router": "^18.2.0",
-    "rxjs": "~7.8.0",
-    "tslib": "^2.3.0",
-    "zone.js": "~0.14.10"
-  },
-  "devDependencies": {
-    "@angular-devkit/build-angular": "^18.2.0",
-    "@angular/cli": "^18.2.0",
-    "@angular/compiler-cli": "^18.2.0",
-    "@types/jasmine": "~5.1.0",
-    "jasmine-core": "~5.2.0",
-    "karma": "~6.4.0",
-    "karma-chrome-launcher": "~3.2.0",
-    "karma-coverage": "~2.2.0",
-    "karma-jasmine": "~5.1.0",
-    "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.5.2"
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.1",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^5.0.0",
+    "connect-mongodb-session": "^3.1.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "mime": "^1.6.0",
+    "mime-types": "^2.1.35",
+    "multer": "^1.4.5-lts.1",
+    "node-fetch": "^3.3.1"
   }
 }
